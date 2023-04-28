@@ -1,4 +1,5 @@
 import tkinter as tk
+from model.pelicula_dao import crear_tabla, eliminar_tabla
 
 def menu(root):
     menu=tk.Menu(root)
@@ -11,8 +12,8 @@ def  menu_inicio(menu, root):
     #tearrof=0 me quita los espacios que se generaban y unas lineas en ese espacio
     inicio=tk.Menu(menu, tearoff=0)
     menu.add_cascade(label = "Inicio", menu =inicio )
-    inicio.add_command(label = "Crear un registro en la db")
-    inicio.add_command(label = "Eliminar un registro de la db")
+    inicio.add_command(label = "Crear un registro en la db", command=crear_tabla)
+    inicio.add_command(label = "Eliminar un registro de la db", command=eliminar_tabla)
     inicio.add_command(label = "Salir", command= root.destroy)
     
 def  menu_ayuda(menu):
