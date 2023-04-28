@@ -13,6 +13,7 @@ class Frame(tk.Frame):
         self.entrys_pelicula()
         self.botones_pelicula()
         #lab2.deshabilitar_entry(self)   
+        self.deshabilitar_entry()
         
     def campo_pelicula(self):
         lab.label_general(self, nombre="Nombre", rowL=0)
@@ -28,6 +29,18 @@ class Frame(tk.Frame):
         lab.boton_agregar(self)
         lab.boton_cancelar(self )
         lab.boton_guardar(self)
+
+    def habilitar_entry(self):
+            lab.habilitar_entry(self)
+        
+    def deshabilitar_entry(self):
+            lab.deshabilitar_entry(self)
+        
+    def habilitar_boton(self):
+        lab.habilitar_boton(self)
+
+    def deshabilitar_boton(self):
+        lab.deshabilitar_boton(self)
 
     
 

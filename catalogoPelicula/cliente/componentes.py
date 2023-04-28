@@ -23,7 +23,7 @@ def entry_duracion(self):
     self.entry_duracion.grid(row=2, column=1, padx=10, pady=10, columnspan = 2)
     
 def boton_agregar(self):
-        self.boton_agregar = tk.Button(self, text="Nuevo",  command= deshabilitar_entry(self))
+        self.boton_agregar = tk.Button(self, text="Nuevo",  command= self.habilitar_entry)
         self.boton_agregar.config(width=20, font=('Arial', 12, 'bold'),
                                 fg='#DAD5D6', bg='#158645', 
                                 cursor='hand2', activebackground='#35BD6F')
@@ -49,19 +49,13 @@ def boton_cancelar(self):
 #     self.entry_genero.config(state="disabled")
 #     self.entry_duracion.config(state="disabled")
 def habilitar_entry(self):
-    self.entry_nombre.config(state="normal")
-    self.entry_genero.config(state="normal")
-    self.entry_duracion.config(state="normal")
+    lab2.habilitar_entry(self)
     
 def deshabilitar_entry(self):
-    self.entry_nombre.config(state="normal")
-    self.entry_genero.config(state="disabled")
-    self.entry_duracion.config(state="disabled")
+    lab2.deshabilitar_entry(self)
     
 def habilitar_boton(self):
-    self.boton_guardar.config(state="normal")
-    self.boton_cancelar.config(state="normal")
+    lab2.habilitar_boton(self)
 
 def deshabilitar_boton(self):
-    self.boton_guardar.config(state="disabled")
-    self.boton_cancelar.config(state="disabled")
+    lab2.deshabilitar_boton(self)
