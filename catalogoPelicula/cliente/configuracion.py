@@ -15,3 +15,20 @@ def habilitar_boton(self):
 def deshabilitar_boton(self):
     self.boton_guardar.config(state="disabled")
     self.boton_cancelar.config(state="disabled")
+    
+def habilitar_entry_y_habilitar_boton(self):
+    self.mi_nombre.set('')
+    self.mi_duracion.set('')
+    self.mi_genero.set('')
+    self.habilitar_entry()
+    self.habilitar_boton()
+    
+def deshabilitar_entry_y_deshabilitar_boton(self):
+    self.deshabilitar_entry()
+    self.deshabilitar_boton()
+    self.mi_nombre.set('')
+    self.mi_duracion.set('')
+    self.mi_genero.set('')
+    
+def guardar_datos(self):
+    deshabilitar_entry_y_deshabilitar_boton(self)

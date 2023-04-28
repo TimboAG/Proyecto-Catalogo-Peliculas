@@ -14,6 +14,9 @@ class Frame(tk.Frame):
         self.botones_pelicula()
         #lab2.deshabilitar_entry(self)   
         self.deshabilitar_entry()
+        self.deshabilitar_boton()
+        self.tabla_peliculas()
+        
         
     def campo_pelicula(self):
         lab.label_general(self, nombre="Nombre", rowL=0)
@@ -29,7 +32,10 @@ class Frame(tk.Frame):
         lab.boton_agregar(self)
         lab.boton_cancelar(self )
         lab.boton_guardar(self)
-
+        
+    def tabla_peliculas(self):
+            lab.tabla_peliculas(self)
+        
     def habilitar_entry(self):
             lab.habilitar_entry(self)
         
@@ -41,6 +47,15 @@ class Frame(tk.Frame):
 
     def deshabilitar_boton(self):
         lab.deshabilitar_boton(self)
+        
+    def habilitar_entry_y_habilitar_boton(self):
+        lab.habilitar_entry_y_habilitar_boton(self)
+        
+    def deshabilitar_entry_y_deshabilitar_boton(self):
+        lab.deshabilitar_entry_y_deshabilitar_boton(self)
+        
+    def guardar_datos(self):
+        lab.guardar_datos(self)
 
     
 
