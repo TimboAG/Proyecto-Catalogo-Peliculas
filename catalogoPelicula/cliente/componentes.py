@@ -74,13 +74,16 @@ def boton_editar(self):
 
 
 def tabla_peliculas(self):
+    self.lista_peliculas = lab2.listar_peliculas(self)
     self.tabla = ttk.Treeview(self, column=("Nombre", "Duracion", "Genero"))
     self.tabla.grid(row=4, column=0, columnspan=4)
     self.tabla.heading("#0", text="ID")
     self.tabla.heading("#1", text="Nombre")
     self.tabla.heading("#2", text="Duracion")
     self.tabla.heading("#3", text="Genero")
-    self.tabla.insert("", 0, text="1", values=("Hola", "2.5", "Mundoooo"))
+    for peli in self.lista_peliculas:
+        self.tabla.insert("", 0, text=peli[0], values=(
+            peli[1], peli[2], peli[3]))
     boton_editar(self)
     boton_eliminar(self)
 

@@ -1,5 +1,5 @@
 from model.pelicula import Pelicula
-from model.pelicula_dao import guardar
+from model.pelicula_dao import guardar, listar
 
 
 def habilitar_entry(self):
@@ -48,3 +48,7 @@ def guardar_datos(self):
     )
     guardar(pelicula)
     deshabilitar_entry_y_deshabilitar_boton(self)
+
+
+def listar_peliculas(self):
+    return listar()

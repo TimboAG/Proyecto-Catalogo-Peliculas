@@ -54,3 +54,21 @@ def guardar(pelicula):
         titulo = 'Conexion al Registro'
         mensaje = 'La tabla peliculas no esta creado en la base de datos'
         messagebox.showerror(titulo, mensaje)
+
+
+def listar():
+    conexion = ConexionDB()
+
+    lista_peliculas = []
+    sql = 'SELECT * FROM peliculas'
+
+    try:
+        conexion.cursor.execute(sql)
+        lista_peliculas = conexion.cursor.fetchall()
+        conexion.cerrar()
+    except:
+        titulo = 'Conexion al Registro '
+        mensaje = 'Crea la tabla en la Base de datos'
+        messagebox.showwarning(titulo, mensaje)
+
+    return lista_peliculas
