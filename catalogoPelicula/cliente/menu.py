@@ -2,7 +2,7 @@ import tkinter as tk
 
 def menu(root):
     menu=tk.Menu(root)
-    root.config(menu= menu, width=300, height=300)
+    root.config(menu= menu, width=300, height=300, bg="#CBCBCB")
     menu_inicio(menu, root)
     menu_ayuda(menu)
     
