@@ -10,6 +10,7 @@ class Frame(tk.Frame):
         self.root = root
         self.pack()
         self.config(bg="#C3C3C3")
+        self.id_pelicula = None
         self.campo_pelicula()
         self.entrys_pelicula()
         self.botones_pelicula()
@@ -55,3 +56,9 @@ class Frame(tk.Frame):
 
     def guardar_datos(self):
         lab.guardar_datos(self)
+
+    def editar_datos(self):
+        lab.editar_datos(self)
+
+    def eliminar_datos(self):
+        lab.eliminar_datos(self)

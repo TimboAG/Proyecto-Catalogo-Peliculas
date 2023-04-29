@@ -58,7 +58,8 @@ def boton_cancelar(self):
 
 
 def boton_eliminar(self):
-    self.boton_eliminar = tk.Button(self, text="Eliminar")
+    self.boton_eliminar = tk.Button(
+        self, text="Eliminar", command=self.eliminar_datos)
     self.boton_eliminar.config(width=20, font=('Arial', 12, 'bold'),
                                fg='#DAD5D6', bg='#BD152E',
                                cursor='hand2', activebackground='#E15370')
@@ -66,7 +67,8 @@ def boton_eliminar(self):
 
 
 def boton_editar(self):
-    self.boton_editar = tk.Button(self, text="Editar")
+    self.boton_editar = tk.Button(
+        self, text="Editar", command=self.editar_datos)
     self.boton_editar.config(width=20, font=('Arial', 12, 'bold'),
                              fg='#DAD5D6', bg='#1658A2',
                              cursor='hand2', activebackground='#3586DF')
@@ -76,7 +78,11 @@ def boton_editar(self):
 def tabla_peliculas(self):
     self.lista_peliculas = lab2.listar_peliculas(self)
     self.tabla = ttk.Treeview(self, column=("Nombre", "Duracion", "Genero"))
-    self.tabla.grid(row=4, column=0, columnspan=4)
+    self.tabla.grid(row=4, column=0, columnspan=4, sticky="nse")
+    self.scroll = ttk.Scrollbar(self,
+                                orient='vertical', command=self.tabla.yview)
+    self.scroll.grid(row=4, column=4, sticky='nse')
+    self.tabla.configure(yscrollcommand=self.scroll.set)
     self.tabla.heading("#0", text="ID")
     self.tabla.heading("#1", text="Nombre")
     self.tabla.heading("#2", text="Duracion")
@@ -114,3 +120,12 @@ def deshabilitar_entry_y_deshabilitar_boton(self):
 
 def guardar_datos(self):
     lab2.guardar_datos(self)
+
+
+def editar_datos(self):
+    lab2.editar_datos(self)
+
+
+def eliminar_datos(self):
+    lab2.eliminar_datos(self)
+    self.id_pelicula = None
